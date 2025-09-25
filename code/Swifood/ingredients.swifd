@@ -1,0 +1,11 @@
+Ingredient {
+    Water,
+    Salt,
+    Egg,
+    Olive_Oil
+}
+
+Ingredient Vegetable {
+    Lettuce,
+    Carrot
+}

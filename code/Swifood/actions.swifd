@@ -1,0 +1,35 @@
+Action put $I {
+    in: $E
+}
+
+Action heat $E {
+    to: $C,
+    until: $C
+}
+
+Action boil $I {
+    in: pot,
+    for: $D
+}
+
+Action fry $I {
+    in: pan,
+    for: $D
+}
+
+Action mix $I {
+    in: bowl,
+    with: spoon
+}
+
+Action preheat $E {
+    to: $T
+}
+
+Action cut $I {
+    with: knife,
+    on: cutting_board
+}
+
+Action wash $I {}
+

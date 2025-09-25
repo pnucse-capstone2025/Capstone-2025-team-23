@@ -1,0 +1,99 @@
+Recipe Boiled_Egg {
+    Ingredients:
+        Egg 4ea, Salt 8g, Water.
+
+    Steps:
+        put [Water, Salt] (in: pot).
+        heat pot (until: boils).
+        boil Egg (for: 00:07:00).
+}
+
+Recipe Boiled_Water {
+    Ingredients:
+        Water.
+
+    Steps:
+        boil Water (until: boils).
+}
+
+Recipe Double_Boiled_Egg {
+    Ingredients:
+        Boiled_Egg 4ea, Boiled_Water.
+
+    Steps:
+        put [Boiled_Egg, Boiled_Water] (in: pot).
+        heat pot (for: 00:07:00).
+}
+
+Recipe A_Boiled_Egg {
+    Ingredients:
+        Egg 4ea, Salt 8g, Water.
+
+    Steps:
+        put [Water, Salt] (in: pot).
+        heat pot (until: boils).
+        boil Egg (for: 00:07:00).
+}
+
+
+Recipe A_Double_Boiled_Egg {
+    Ingredients:
+        Boiled_Egg 4ea, Boiled_Water.
+
+    Steps:
+        put [Boiled_Egg, Boiled_Water] (in: pot).
+        heat pot (for: 00:07:00).
+}
+
+
+Recipe Fryed_Double_Boiled_Egg {
+    Ingredients:
+        A_Double_Boiled_Egg 4ea, Boiled_Egg, Olive_Oil.
+
+    Steps:
+        fry [A_Double_Boiled_Egg, Olive_Oil] (for: 00:03:00).
+        put [Boiled_Egg] (in: pot).
+}
+
+Recipe Test_Using_Self {
+    Ingredients:
+        Test_Using_Self.
+
+    Steps:
+        put Test_Using_Self (in: pot).
+}
+
+Recipe Test_Using_Self_In_Step {
+    Ingredients:
+        Water.
+
+    Steps:
+        put Test_Using_Self (in: pot).
+        put Water (in: pot).
+}
+
+Recipe Test_Analyze_Equipments {
+    Ingredients:
+        Egg 4ea.
+
+    Steps:
+        boil Egg (for: 00:07:00).
+}
+
+Recipe Test_Recipe_Error_Check {
+    Ingredients:
+        Egg 4ea, Salt, Water.
+
+    Steps:
+        put Water (in: pot).
+        boil Egg (for: 00:07:00).
+}
+
+Recipe Test_Recipe_Error_Check_Two {
+    Ingredients:
+        Egg 4ea.
+
+    Steps:
+        put Water (in: pot).
+        boil Egg (for: 00:07:00).
+}

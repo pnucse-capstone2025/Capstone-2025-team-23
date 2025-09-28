@@ -16,7 +16,7 @@
 
 ### 4. 소개 및 시연 영상
 
-
+[![2025 전기 졸업과제 23 Team Cook](http://img.youtube.com/vi/9R9XChsXTgg/0.jpg)](https://www.youtube.com/watch?v=9R9XChsXTgg)
 
 ### 5. 설치 및 사용법
 

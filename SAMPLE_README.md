@@ -4,13 +4,24 @@
 
 ### 2. 팀소개
 
-윤선재, delicatesephin@pusan.ac.kr, 언어 설계, 인터프리터 구현, 보고서 작성, 포스터 작성, 발표
+윤선재, delicatesephin@pusan.ac.kr, 언어 설계, 인터프리터 구현, 보고서 및 포스터 작성, 발표 영상 제작
 
 채문석, preturn@pusan.ac.kr, 사전 연구 조사
 
 팜민두옹, duongkun.sky.hp@gmail.com, 레시피 조사
 
-### 3. 시스템 구성도
+### 3. 시스템 설계
+#### 3.1. 사용 기술
++ GCC
++ Flex
++ Bison
++ Make
+#### 3.2. 시스템 구성도
+<img width="3230" height="2997" alt="시스템 구성도" src="https://github.com/user-attachments/assets/6375ad91-89ee-4a60-8826-112882efd5b6" />
+
+#### 3.3. 데이터 흐름도
+<img width="3302" height="2115" alt="데이터 흐름도" src="https://github.com/user-attachments/assets/8c2a20fd-f2d0-467d-803b-db21f6fc11b7" />
+
 
 
 

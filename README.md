@@ -1,237 +1,146 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/nRcUn8vA)
-# Template for Capstone
-이 레파지토리는 학생들이 캡스톤 프로젝트 결과물을 위한 레파지토리 생성시에 참고할 내용들을 담고 있습니다.
-1. 레파지토리 생성
-2. 레파지토리 구성
-3. 레파지토리 제출 
-4. README.md 가이드라인
-5. README.md 작성팁
-
----
-
-## 1. 레파지토리 생성
-- [https://classroom.github.com/a/nRcUn8vA](https://classroom.github.com/a/nRcUn8vA)
-- 위 Github Classroom 링크에 접속해 본인 조의 github 레파지토리를 생성하세요.
-
-<img width="700" alt="깃헙 클래스룸 레포 생성" src="https://github.com/user-attachments/assets/34ca1f43-c2cd-4880-a39e-0dafd889c35f" />
-
-- 레포지토리 생성 시 팀명은 `TEAM-{조 번호}` 형식으로 생성하세요.
-- 예를 들어, 2025년도 3조의 팀명은 `TEAM-03` 입니다.
-- 이 경우 `Capstone2025-team-03`이란 이름으로 레파지토리가 생성됩니다.
-
----
-
-## 2. 레파지토리 구성
-- 레파지토리 내에 README.md 파일 생성하고 아래의 가이드라인과 작성팁을 참고하여 README.md 파일을 작성하세요. (이 레파지토리의 SAMPLE_README.md 참조)
-- 레파지토리 내에 docs 디렉토리를 생성하고 docs 디렉토리 내에는 과제 수행 하면서 작성한 각종 보고서, 발표자료를 올려둡니다. (이 레파지토리의 docs 디렉토리 참조)
-- 그 밖에 레파지토리의 폴더 구성은 과제 결과물에 따라 자유롭게 구성하되 가급적 코드의 목적이나 기능에 따라 디렉토리를 나누어 구성하세요.
-
----
-
-## 3. 레파지토리 제출 
-
-- **`[주의]` 레파지토리 제출**은 해당 레파지토리의 ownership을 **학과 계정**으로 넘기는 것이므로 되돌릴 수 없습니다.
-- **레파지토리 제출** 전, 더 이상 수정 사항이 없는지 다시 한번 확인하세요.
-- github 레파지토리에서 Settings > General > Danger zone > Transfer 클릭
-  <img src="https://github.com/user-attachments/assets/cb2361d4-e07e-4b5d-9116-aa80dddd8a8b" alt="소유주 변경 경로" width="500" />
-  
-- [ Specify an organization or username ]에 'PNUCSE'를 입력하고 확인 메세지를 입력하세요.
-  <img src="https://github.com/user-attachments/assets/7c63955d-dcfe-4ac3-bdb6-7d2620575f3a" alt="소유주 변경" width="400" />
-
----
-
-## 4. README.md 가이드 라인
-- README 파일 작성시에 아래의 5가지 항목의 내용은 필수적으로 포함해야 합니다.
-- 아래의 항목이외에 프로젝트의 이해를 돕기 위한 내용을 추가해도 됩니다.
-- SAMPLE_README.md 이 단순한 형태의 예제이니 참고하세요.
-
-```markdown
 ### 1. 프로젝트 배경
+요리 레시피는 본디 인간이 이해하기 쉬운 자연어로 작성되어 이를 기계가 직접 해석하여 조리 동작을 수행하기에는 많은 모호성과 생략된 정보를 내포한다.
+이는 최근 인공지능 및 컴퓨터 비전 기술의 발전으로 널리 개발되고 있는 로봇을 이용한 자동화 조리에 약점으로 작용한다.
+이 문제를 해결하기 위해 지난 20년간 도메인 특화 언어(DSL)로 레시피를 형식화하여 로봇이 요리를 정확하게 반복적으로 수행할 수 있도록 활발히 연구되고 있다.
+본 보고서는 이러한 최신 연구 및 상용 사례를 중심으로 요리 레시피 코드화의 동향을 살펴보고, 기존 기술의 문제점을 해결하는 방법을 제시하고자 한다.
+
 #### 1.1. 국내외 시장 현황 및 문제점
-> 시장 조사 및 기존 문제점 서술
+요리 과정을 컴퓨터가 이해할 수 있는 도메인 특화 언어(DSL)로 표현하려는 시도는 여러 차례 있었다.
+이러한 DSL은 레시피의 재료, 조리 단계, 조리 기구 등을 형식화하여 알고리즘처럼 기술하고자 한다.
+기존에 시도된 구현 사례의 특징 및 한계는 다음과 같다.
+
+##### 1.1.1. 레시피ML (Recipe Markup Language)
+2000년경 제안된 XML 기반 포맷으로 코드명 DESSERT(Document Encoding and Structuring Specification for Electronic Recipe Transfer)로도 불린다.
+XML 태그를 통해 레시피의 재료 목록과 단계별 지시사항을 마크업 함으로써 서로 다른 단위 환산을 자동화하거나 재료를 체계적으로 표현하려는 목적이 있었다[1].
+하지만 RecipeML은 산업 표준으로 널리 채택되지는 못했고, 다양한 레시피 포맷이 혼재하는 등의 한계가 있다.
+
+##### 1.1.2. Corel (Cooking Recipe Language)
+2021년 네덜란드 흐로닝언대(University of Groningen)의 연구로 개발된 요리 레시피 DSL이다.
+Rascal 언어 워크벤치를 이용하여 구현되었으며, 레시피의 구조를 도메인 분석(FODA 기법)으로 모델링하여 설계되었다.
+Corel은 재료에 대한 이해와 영양 성분 계산 등의 기능을 포함하고 있어 레시피로부터 영양 라벨을 자동 생성할 수 있다.
+실제 요리 동작의 모든 측면을 기술하기에는 한계가 있지만 재료, 분량, 단계 등을 형식화하여 레시피 지식을 컴퓨터가 처리할 수 있음을 보였다는 의의가 있다[2].
+
+##### 1.1.3. Cooklang
+2020년대에 커뮤니티 주도로 만들어진 오픈소스 레시피 마크업 언어이다.
+일반 텍스트로 작성된 레시피에 특수 문자를 넣어 재료, 용기, 조리 시간 등의 정보를 기계가 파싱할 수 있게 하였다.
+예를 들어 2킬로그램의 감자는 ‘@감자{2kg}’의 형태로 표현한다.
+또한 각 줄을 단계로 구분하는 등 단순한 문법을 제공하며[3], 개발 도구와 모바일 앱 등의 생태계를 갖추어 개인 레시피 관리나 장보기 리스트 연계 등에 활용되고 있지만, 이는 주로 데이터 관리 목적이며로봇 제어를 위한 완전한 절차 명세로 쓰이기에는 표현력에 한계가 있다.
+
 
 #### 1.2. 필요성과 기대효과
-> 왜 이 프로젝트가 필요한지, 기대되는 효과 등
+세계 각국의 다양한 문화 콘텐츠의 보급과 함께 여러 나라의 다양한 음식들에 대한 관심으 증가하고 있다.
+또한 더 나아가 이를 직접 만들기 위해 요리 레시피의 공유도 활발히 이루어지고 있다.
+하지만 이러한 변화에도 불구하고 레시피는 여전히 과거의 형태에 머물고 있다.
+이것이 요리 레시피 기술을 위한 새로운 방법이 필요하게 된 이유이다.
+
+
 
 ### 2. 개발 목표
 #### 2.1. 목표 및 세부 내용
-> 전체적인 개발 목표, 주요 기능 및 기획 내용
+본 과제는 조리 동작의 표현을 중점으로 한 요리 레시피 DSL을 설계하고, 이를 실제로 사용할 수 있는 환경을 구현하는 것을 목표로 한다.
+이를 통해 요리 레시피 기술의 새로운 방법을 제시함으로써 다음과 같은 성과를 지향한다.
+
+##### 2.1.1. 요리 과정의 형식화
+1. 조리 단계, 재료, 도구, 시간 등 레시피를 구성하는 요소들을 명확하게 정의할 수 있도록 한다.
+2. 재료 표현, 조리 시간, 종료 조건 등에서 사용되는 단위를 SI 단위계 기반으로 표준화한다.
+
+##### 2.1.2. 요리 과정의 일관된 해석 구조 구현
+1. 재료 용량이나 조리 시간 등을 표준 단위로 표현하여 지역이나 문화 등에 따른 해석의 차이를 방지한다.
+
+##### 2.1.3. 인간 친화적 출력 기능 제공
+1. 코드 형태의 레시피를 사람이 쉽게 이해할 수 있는 자연어 형식으로 출력할 수 있는 기능을 포함한다.
+
+##### 2.1.4. 레시피 작성을 위한 편의 기능 제공
+1. 레시피 오류 검사 기능을 통해 작성한 레시피 코드의 오류를 쉽게 파악하고 수정할 수 있도록 한다.
+2. 필요한 도구 자동 분석 기능을 통해 작성된 레시피에서 필요한 도구를 자동으로 파악할 수 있도록 한다
+
 
 #### 2.2. 기존 서비스 대비 차별성 
-> 유사 서비스 비교 및 차별점 부각
+기존의 연구들은 과거의 레시피 작성법에서 재료 표현과 시간 표현 등 일부 부분들을 단순히 치환하는 구조에 머물러 있다.
+이는 기존의 레시피 표현법이 가지고 있던 문제점들을 그대로 가지고 있으며, 이로 인해 레시피 공유를 활성화하기 적합하지 않다.
+하지만 본 프로젝트는 레시피를 보다 나은 구조로 작성할 수 있도록 하였으며, 레시피 공유에 있어서 더 나은 방법을 제시하였다.
 
-#### 2.3. 사회적 가치 도입 계획 
-> 프로젝트의 공공성, 지속 가능성, 환경 보호 등
+
+#### 2.3. 사회적 가치 도입 계획
+본 프로젝트는 새로운 레시피 기술 방법을 제시함으로써 레시피 공유의 새로운 방향을 제시하고자 한다.
+이를 통해 레시피 공유 문화의 발전에 이바지하고, 다양한 문화의 사람들이 서로의 음식을 공유할 수 있도록 한다.
+
+
+
 ### 3. 시스템 설계
-#### 3.1. 시스템 구성도
-> 이미지 혹은 텍스트로 시스템 아키텍쳐 작성
->
-#### 3.2. 사용 기술
-> 프론트엔드, 백엔드, API 등 구체 기술 스택
+#### 3.1. 사용 기술
++ GCC
++ Flex
++ Bison
++ Make
+
+#### 3.2. 시스템 구성도
+<img width="3230" height="2997" alt="시스템 구성도" src="https://github.com/user-attachments/assets/6375ad91-89ee-4a60-8826-112882efd5b6" />
+
+
 
 ### 4. 개발 결과
 #### 4.1. 전체 시스템 흐름도
-> 기능 흐름 설명 및 도식화 가능
->
+<img width="3302" height="2115" alt="데이터 흐름도" src="https://github.com/user-attachments/assets/8c2a20fd-f2d0-467d-803b-db21f6fc11b7" />
+
 #### 4.2. 기능 설명 및 주요 기능 명세서
-> 주요 기능에 대한 상세 설명, 각 기능의 입력/출력 및 설명
->
-#### 4.3. 디렉토리 구조
->
-#### 4.4. 산업체 멘토링 의견 및 반영 사항
-> 멘토 피드백과 적용한 사례 정리
+본 프로젝트는 레시피 기술 언어 Swifood의 설계 및 구현이며, Swifood의 주요 기능은 다음과 같다.
+
+##### 4.2.1.  코드 파싱 및 분석
+작성된 *.swifd 파일을 파싱하고, 이 과정에서 존재하는 문제점들을 검출한다.
+
+<img width="273" height="138" alt="파싱 에러 코드" src="https://github.com/user-attachments/assets/28973735-4278-47fb-be1b-93e83ba1d74b" />
+<img width="522" height="58" alt="파싱 에러 출력" src="https://github.com/user-attachments/assets/2428d295-fa43-4569-87fc-2602e3938523" />
+
+
+##### 4.2.2.  레시피 오류 자동 검출
+작성된 레시피의 과정에서 발견되는 오류들을 검출한다.
+대표적인 오류의 예시로는 선언되지 않은 재료의 사용, 사용되지 않은 재료의 검출이 있다.
+
+<img width="3612" height="1177" alt="오류 1" src="https://github.com/user-attachments/assets/0936a053-ca63-4cfb-a1e2-fb65b318315f" />
+<img width="3612" height="1256" alt="오류 2" src="https://github.com/user-attachments/assets/c53f1b6b-661e-4273-bb26-1e8a70a6d8c7" />
+
+##### 4.2.3.  필요 도구 자동 분석
+작성된 레시피에서 필요한 도구를 자동으로 분석한다.
+이때 출력된 레시피의 *Equipments* 항목에서 확인할 수 있다.
+
+<img width="3612" height="1522" alt="정상" src="https://github.com/user-attachments/assets/1a71b4cb-f728-4375-93d1-1269df44574c" />
+
+##### 4.2.4.  레시피 출력
+작성된 레시피를 간단한 텍스트 형태로 출력한다.
+
+<img width="3612" height="1522" alt="정상" src="https://github.com/user-attachments/assets/1a71b4cb-f728-4375-93d1-1269df44574c" />
+
+
+
 
 ### 5. 설치 및 실행 방법
->
-#### 5.1. 설치절차 및 실행 방법
-> 설치 명령어 및 준비 사항, 실행 명령어, 포트 정보 등
-#### 5.2. 오류 발생 시 해결 방법
-> 선택 사항, 자주 발생하는 오류 및 해결책 등
+본 프로젝트는 macOS Sequoia 15.6.1 버전에서 개발되었으며 code/Swifood/ 폴더에서 터미널을 연 후 다음의 과정을 수행하여 실행할 수 있다. 코드 작성은 해당 폴더의 recipes.swifd 파일에 작성하면 된다.
+```
+$ make
+$ ./swifood <recipe_name>
+```
+
+
 
 ### 6. 소개 자료 및 시연 영상
 #### 6.1. 프로젝트 소개 자료
-> PPT 등
+**docs/03.발표자료/2025전기_발표자료_23_Team Cook_요리용 코딩언어 개발.pdf** 참조
+ 
 #### 6.2. 시연 영상
-> 영상 링크 또는 주요 장면 설명
+[![2025 전기 졸업과제 23 Team Cook](http://img.youtube.com/vi/9R9XChsXTgg/0.jpg)](https://www.youtube.com/watch?v=9R9XChsXTgg)
+
+
 
 ### 7. 팀 구성
 #### 7.1. 팀원별 소개 및 역할 분담
->
-#### 7.2. 팀원 별 참여 후기
-> 개별적으로 느낀 점, 협업, 기술적 어려움 극복 사례 등
++ 윤선재, delicatesephin@pusan.ac.kr, 언어 설계, 인터프리터 구현, 보고서 및 포스터 작성, 발표 영상 제작
++ 채문석, preturn@pusan.ac.kr, 사전 연구 조사
++ 팜민두옹, duongkun.sky.hp@gmail.com, 레시피 조사
+
+
 
 ### 8. 참고 문헌 및 출처
-
-```
-
-## 5. README.md 작성팁 
-* 마크다운 언어를 이용해 README.md 파일을 작성할 때 참고할 수 있는 마크다운 언어 문법을 공유합니다.  
-* 다양한 예제와 보다 자세한 문법은 [이 문서](https://www.markdownguide.org/basic-syntax/)를 참고하세요.
-
-### 5.1. 헤더 Header
-```
-# This is a Header 1
-## This is a Header 2
-### This is a Header 3
-#### This is a Header 4
-##### This is a Header 5
-###### This is a Header 6
-####### This is a Header 7 은 지원되지 않습니다.
-```
-<br />
-
-### 5.2. 인용문 BlockQuote
-```
-> This is a first blockqute.
->	> This is a second blockqute.
->	>	> This is a third blockqute.
-```
-> This is a first blockqute.
->	> This is a second blockqute.
->	>	> This is a third blockqute.
-<br />
-
-### 5.3. 목록 List
-* **Ordered List**
-```
-1. first
-2. second
-3. third  
-```
-1. first
-2. second
-3. third
-<br />
-
-* **Unordered List**
-```
-* 하나
-  * 둘
-
-+ 하나
-  + 둘
-
-- 하나
-  - 둘
-```
-* 하나
-  * 둘
-
-+ 하나
-  + 둘
-
-- 하나
-  - 둘
-<br />
-
-### 5.4. 코드 CodeBlock
-* 코드 블럭 이용 '``'
-```
-여러줄 주석 "```" 이용
-"```
-#include <stdio.h>
-int main(void){
-  printf("Hello world!");
-  return 0;
-}
-```"
-
-단어 주석 "`" 이용
-"`Hello world`"
-
-* 큰 따움표(") 없이 사용하세요.
-``` 
-<br />
-
-### 5.5. 링크 Link
-```
-[Title](link)
-[부산대학교 정보컴퓨터공학부](https://cse.pusan.ac.kr/cse/index..do)
-
-<link>
-<https://cse.pusan.ac.kr/cse/index..do>
-``` 
-[부산대학교 정보컴퓨터공학부](https://cse.pusan.ac.kr/cse/index..do)
-
-<https://cse.pusan.ac.kr/cse/index..do>
-<br />
-
-### 5.6. 강조 Highlighting
-```
-*single asterisks*
-_single underscores_
-**double asterisks**
-__double underscores__
-~~cancelline~~
-```
-*single asterisks* <br />
-_single underscores_ <br />
-**double asterisks** <br />
-__double underscores__ <br />
-~~cancelline~~  <br />
-<br />
-
-### 5.7. 이미지 Image
-```
-<img src="image URL" width="600px" title="Title" alt="Alt text"></img>
-![Alt text](image URL "Optional title")
-```
-- 웹에서 작성한다면 README.md 내용 안으로 이미지를 드래그 앤 드롭하면 이미지가 생성됩니다.
-- 웹이 아닌 로컬에서 작성한다면, github issue에 이미지를 드래그 앤 드롭하여 image url 을 얻을 수 있습니다. (URL만 복사하고 issue는 제출 안 함.)
-  <img src="https://github.com/user-attachments/assets/0fe3bff1-7a2b-4df3-b230-cac4ef5f6d0b" alt="이슈에 image 올림" width="600" />
-  <img src="https://github.com/user-attachments/assets/251c6d42-b36b-4ad4-9cfa-fa2cc67a9a50" alt="image url 복사" width="600" />
-
-
-### 5.8. 유튜브 영상 추가
-```markdown
-[![영상 이름](유튜브 영상 썸네일 URL)](유튜브 영상 URL)
-[![부산대학교 정보컴퓨터공학부 소개](http://img.youtube.com/vi/zh_gQ_lmLqE/0.jpg)](https://www.youtube.com/watch?v=zh_gQ_lmLqE)    
-```
-[![부산대학교 정보컴퓨터공학부 소개](http://img.youtube.com/vi/zh_gQ_lmLqE/0.jpg)](https://www.youtube.com/watch?v=zh_gQ_lmLqE)    
-
-- 이때 유튜브 영상 썸네일 URL은 유투브 영상 URL로부터 다음과 같이 얻을 수 있습니다.
-
-- `Youtube URL`: https://www.youtube.com/watch?v={동영상 ID}
-- `Youtube Thumbnail URL`: http://img.youtube.com/vi/{동영상 ID}/0.jpg 
-- 예를 들어, https://www.youtube.com/watch?v=zh_gQ_lmLqE 라고 하면 썸네일의 주소는 http://img.youtube.com/vi/zh_gQ_lmLqE/0.jpg 이다.
-
+1. FORMATDATA. RecipeML. Available at: http://www.formatdata.com/recipeml/.
+2. ROORDA, Auke. Corel: A DSL for Cooking Recipes. 2021. PhD Thesis.
+3. COOKLANG. Cooklang Specification. Available at: https://cooklang.org/docs/spec/.
